@@ -12,7 +12,7 @@ namespace SiteECommerce_TP_
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.AddDbContext<ApplicationDbContext>(
+            builder.Services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
             var app = builder.Build();
