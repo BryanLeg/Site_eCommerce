@@ -1,3 +1,6 @@
+using SiteECommerce_TP_.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace SiteECommerce_TP_
 {
     public class Program
@@ -8,6 +11,9 @@ namespace SiteECommerce_TP_
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.AddDbContext<ApplicationDbContext>(
+                options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
             var app = builder.Build();
 

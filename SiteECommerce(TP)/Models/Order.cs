@@ -23,5 +23,13 @@ namespace SiteECommerce_TP_.Models
         [DefaultValue("in progress")]
         [Column("status")]
         public string Status { get; set; }
+
+        [Column("user")]
+        public User User { get; set; }
+
+        /*                          RELATIONS                           */
+
+        [Column("ordered_products")]
+        public List<Product> OrderedProducts { get; set; }
     }
 }

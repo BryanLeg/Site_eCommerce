@@ -17,5 +17,11 @@ namespace SiteECommerce_TP_.Models
 
         [Column("rating")]
         public int Rating { get; set; }
+
+        [Column("User")]
+        public User User { get; set; }
+
+        [Column("Product")]
+        public Product Product { get; set; }
     }
 }

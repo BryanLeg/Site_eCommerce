@@ -44,5 +44,13 @@ namespace SiteECommerce_TP_.Models
         [DefaultValue(true)]
         [Column("is_active")]
         public bool IsActive { get; set; }
+
+        /*                          RELATIONS                           */
+
+        [Column("opinions")]
+        public List<Opinion> Opinions { get; set; }
+
+        [Column("orders")]
+        public List<Order> Orders { get; set; }
     }
 }

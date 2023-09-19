@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace SiteECommerce_TP_.Models
 {
@@ -45,7 +48,10 @@ namespace SiteECommerce_TP_.Models
 
         /*                          RELATIONS                           */
 
-        [Column("products")]
+        [Column("orders")]
+        public List<Order> Orders { get; set; }
 
+        [Column("opinions")]
+        public List<Opinion> Opinions { get; set; }
     }
 }
