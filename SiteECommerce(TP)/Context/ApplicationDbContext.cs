@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SiteECommerce_TP_.Models;
 
 namespace SiteECommerce_TP_.Context
 {
-    public class ApplicationDbContext
+    public class ApplicationDbContext : DbContext
     {
-        protected readonly IConfiguration _configuration;
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
 
-        public ApplicationDbContext(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-        protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test");
-        }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Opinion> Opinions { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
     }
 }

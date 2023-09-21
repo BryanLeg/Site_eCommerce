@@ -5,23 +5,23 @@ namespace SiteECommerce_TP_.Models
 {
     public class Opinion
     {
-        [Column("id")]
+        [Column("op_id")]
         public Guid Id { get; set; }
 
-        [Column("content")]
+        [Column("op_content")]
         public string Content { get; set; }
 
         [DefaultValue(false)]
-        [Column("is_visible")]
+        [Column("op_is_visible")]
         public bool IsVisible { get; set; }
 
-        [Column("rating")]
+        [Column("op_rating")]
         public int Rating { get; set; }
 
-        [Column("User")]
+        [Column("op_user")]
         public User User { get; set; }
 
-        [Column("Product")]
+        [Column("op_product")]
         public Product Product { get; set; }
     }
 }

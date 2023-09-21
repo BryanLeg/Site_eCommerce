@@ -5,44 +5,44 @@ namespace SiteECommerce_TP_.Models
 {
     public class Product
     {
-        [Column("id")]
+        [Column("p_id")]
         public Guid Id { get; set; }
 
-        [Column("height")]
+        [Column("p_height")]
         public float Height { get; set; }
 
-        [Column("lenght")]
+        [Column("p_lenght")]
         public float Length { get; set; }
 
-        [Column("width")]
+        [Column("p_width")]
         public float Width { get; set; }
 
-        [Column("weight")]
+        [Column("p_weight")]
         public float Weigth { get; set; }
 
-        [Column("capacity")]
+        [Column("p_capacity")]
         public int Capacity { get; set; }
 
-        [Column("description")]
+        [Column("p_description")]
         public string Description { get; set; }
 
-        [Column("primary_color")]
+        [Column("p_primary_color")]
         public string Color { get; set; }
 
-        [Column("constructor")]
+        [Column("p_constructor")]
         public string Constructor { get; set; }
 
-        [Column("price")]
+        [Column("p_price")]
         public float Price { get; set; }
 
-        [Column("picture")]
+        [Column("p_picture")]
         public string Picture { get; set; }
 
-        [Column("order_count")]
+        [Column("p_order_count")]
         public int OrderCount { get; set; }
 
         [DefaultValue(true)]
-        [Column("is_active")]
+        [Column("p_is_active")]
         public bool IsActive { get; set; }
 
         /*                          RELATIONS                           */

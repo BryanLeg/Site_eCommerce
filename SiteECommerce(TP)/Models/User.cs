@@ -8,42 +8,42 @@ namespace SiteECommerce_TP_.Models
 {
     public class User
     {
-        [Column("id")]
+        [Column("u_id")]
         public Guid Id { get; set; }
 
-        [Column("mail")]
+        [Column("u_mail")]
         public string Name { get; set; }
 
-        [Column("password")]
+        [Column("u_password")]
         public string Password { get; set; }
 
-        [Column("phone_number")]
+        [Column("u_phone_number")]
         public int PhoneNumber { get; set; }
 
-        [Column("firstname")]
+        [Column("u_firstname")]
         public string Firstname { get; set; }
 
-        [Column("lastname")]
+        [Column("u_lastname")]
         public string Lastname { get; set; }
 
-        [Column("adress")]
+        [Column("u_adress")]
         public string Adress { get; set; }
 
-        [Column("postal_code")]
+        [Column("u_postal_code")]
         public int PostalCode { get; set; }
 
-        [Column("city")]
+        [Column("u_city")]
         public string City { get; set; }
 
-        [Column("country")]
+        [Column("u_country")]
         public string Country { get; set; }
 
         [DefaultValue("client")]
-        [Column("role")]
+        [Column("u_role")]
         public string Role { get; set; }
 
         [DefaultValue(true)]
-        [Column("is_active")]
+        [Column("u_is_active")]
         public bool IsActive { get; set; }
 
         /*                          RELATIONS                           */
