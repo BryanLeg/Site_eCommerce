@@ -1,5 +1,5 @@
 ﻿@using SiteECommerce_TP_.Models.ViewModels;
-@model RegisterRequest
+@model RegisterViewModel
 @{
     ViewData["Title"] = "Register";
 }
@@ -7,18 +7,43 @@
 <h1>Register</h1>
 
 <form asp-controller="User" asp-action="Register" method="post"> 
+    
     <div class="input-contner">
+        <label asp-for="Firstname"></label>
+        <input class="form-input" asp-for="Firstname" placeholder="ex: John"/> 
+        <span asp-validation-for="Firstname" class="text-danger"></span>
 
-    Firstname: <input class="form-input" asp-for="Firstname" placeholder="ex: John"/> 
-    Lastname: <input class="form-input" asp-for="Lastname" placeholder="ex: Smith" />
-    Password: <input class="form-input" asp-for="Password" placeholder="type your password" />
-    Confirm Password: <input class="form-input" asp-for="ConfirmPassword" placeholder="type the same password as above" />
-    Email: <input class="form-input" asp-for="Email" placeholder="ex: johnsmith@email.com" />
-    Phone Number: <input class="form-input" asp-for="PhoneNumber" placeholder="ex: +33 6 ** ** ** **" />
-    Adress: <input class="form-input" asp-for="Adress" placeholder="ex: 47 avenue de l'Amandier" />
-    City: <input class="form-input" asp-for="City" placeholder="ex: Bondy" />
-    Country: <input class="form-input" asp-for="Country" placeholder="ex: France" />
-    Postal Code: <input class="form-input" asp-for="PostalCode" placeholder="ex: 93140" />
+        <label asp-for="Lastname"></label>
+        <input class="form-input" asp-for="Lastname" placeholder="ex: Smith" />
+        <span asp-validation-for="Lastname" class="text-danger"></span>
+
+
+        <label asp-for="Password"></label>
+        <input class="form-input" asp-for="Password" placeholder="type your password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+        <label asp-for="ConfirmPassword"></label>
+        <input class="form-input" asp-for="ConfirmPassword" placeholder="type the same password as above" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+
+        <label asp-for="Email"></label>
+        <input class="form-input" asp-for="Email" placeholder="ex: johnsmith@email.com" />
+
+        <label asp-for="PhoneNumber"></label>
+        <input class="form-input" asp-for="PhoneNumber" placeholder="ex: +33 6 ** ** ** **" />
+
+        <label asp-for="Adress"></label>
+        <input class="form-input" asp-for="Adress" placeholder="ex: 47 avenue de l'Amandier" />
+
+        <label asp-for="City"></label>
+        <input class="form-input" asp-for="City" placeholder="ex: Bondy" />
+
+        <label asp-for="Country"></label>
+        <input class="form-input" asp-for="Country" placeholder="ex: France" />
+
+        <label asp-for="PostalCode"></label>
+        <input class="form-input" asp-for="PostalCode" placeholder="ex: 93140" />
     </div>
     
     <div class="btn-contner">

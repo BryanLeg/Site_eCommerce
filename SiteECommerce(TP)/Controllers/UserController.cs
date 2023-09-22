@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SiteECommerce_TP_.Context;
+using SiteECommerce_TP_.Models.ViewModels;
 
 namespace SiteECommerce_TP_.Controllers
 {
@@ -11,7 +12,7 @@ namespace SiteECommerce_TP_.Controllers
         {
             _context = context;
         }
-       
+
         public IActionResult Index()
         {
             return View();
@@ -19,13 +20,25 @@ namespace SiteECommerce_TP_.Controllers
 
         #region REGISTER
 
+        // GET: /Register
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
+        //POST: /Register
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
 
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
 
 
         #endregion
