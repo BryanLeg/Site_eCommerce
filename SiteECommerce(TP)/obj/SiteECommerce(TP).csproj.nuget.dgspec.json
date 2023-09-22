@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\SiteECommerce(TP).csproj": {}
+    "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\SiteECommerce(TP).csproj": {}
   },
   "projects": {
-    "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\SiteECommerce(TP).csproj": {
+    "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\SiteECommerce(TP).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
+        "projectUniqueName": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
         "projectName": "SiteECommerce(TP)",
-        "projectPath": "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
-        "packagesPath": "C:\\Users\\zod59\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\obj\\",
+        "projectPath": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
+        "packagesPath": "C:\\Users\\GK\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zod59\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GK\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
             }
           },
           "imports": [

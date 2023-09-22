@@ -12,7 +12,7 @@ namespace SiteECommerce_TP_.Models
         public Guid Id { get; set; }
 
         [Column("u_mail")]
-        public string Name { get; set; }
+        public string Mail { get; set; }
 
         [Column("u_password")]
         public string Password { get; set; }
@@ -26,11 +26,11 @@ namespace SiteECommerce_TP_.Models
         [Column("u_lastname")]
         public string Lastname { get; set; }
 
-        [Column("u_adress")]
-        public string Adress { get; set; }
+        [Column("u_address")]
+        public string Address { get; set; }
 
         [Column("u_postal_code")]
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; }
 
         [Column("u_city")]
         public string City { get; set; }

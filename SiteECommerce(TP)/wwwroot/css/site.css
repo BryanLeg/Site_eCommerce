@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.form-input {
+    margin: 10px;
+    width: 50vw;  
+}
+
+.input-contner {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-contner {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+}
+
+.register-btn {
+    padding: 10px 100px;
+    margin: 30px 0px;
+}

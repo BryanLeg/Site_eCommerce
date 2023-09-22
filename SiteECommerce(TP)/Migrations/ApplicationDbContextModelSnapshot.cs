@@ -181,10 +181,10 @@ namespace SiteECommerce_TP_.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("u_id");
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("u_adress");
+                        .HasColumnName("u_address");
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -210,7 +210,7 @@ namespace SiteECommerce_TP_.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("u_lastname");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Mail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("u_mail");
@@ -224,8 +224,9 @@ namespace SiteECommerce_TP_.Migrations
                         .HasColumnType("int")
                         .HasColumnName("u_phone_number");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int")
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("u_postal_code");
 
                     b.Property<string>("Role")

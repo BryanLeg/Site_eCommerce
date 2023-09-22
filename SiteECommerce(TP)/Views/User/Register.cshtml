@@ -1,0 +1,27 @@
+﻿@using SiteECommerce_TP_.Models.ViewModels;
+@model RegisterRequest
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form asp-controller="User" asp-action="Register" method="post"> 
+    <div class="input-contner">
+
+    Firstname: <input class="form-input" asp-for="Firstname" placeholder="ex: John"/> 
+    Lastname: <input class="form-input" asp-for="Lastname" placeholder="ex: Smith" />
+    Password: <input class="form-input" asp-for="Password" placeholder="type your password" />
+    Confirm Password: <input class="form-input" asp-for="ConfirmPassword" placeholder="type the same password as above" />
+    Email: <input class="form-input" asp-for="Email" placeholder="ex: johnsmith@email.com" />
+    Phone Number: <input class="form-input" asp-for="PhoneNumber" placeholder="ex: +33 6 ** ** ** **" />
+    Adress: <input class="form-input" asp-for="Adress" placeholder="ex: 47 avenue de l'Amandier" />
+    City: <input class="form-input" asp-for="City" placeholder="ex: Bondy" />
+    Country: <input class="form-input" asp-for="Country" placeholder="ex: France" />
+    Postal Code: <input class="form-input" asp-for="PostalCode" placeholder="ex: 93140" />
+    </div>
+    
+    <div class="btn-contner">
+        <input class="register-btn" type="submit" value="Register"/>
+    </div>
+</form>
