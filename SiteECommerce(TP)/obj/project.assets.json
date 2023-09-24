@@ -11109,19 +11109,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GK\\.nuget\\packages\\": {}
+    "C:\\Users\\zod59\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
+      "projectUniqueName": "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
       "projectName": "SiteECommerce(TP)",
-      "projectPath": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
-      "packagesPath": "C:\\Users\\GK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\obj\\",
+      "projectPath": "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\SiteECommerce(TP).csproj",
+      "packagesPath": "C:\\Users\\zod59\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\zod59\\source\\repos\\SiteECommerce(TP)\\SiteECommerce(TP)\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\GK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\zod59\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
