@@ -15,6 +15,14 @@ namespace SiteECommerce_TP_.Controllers
 
         public IActionResult Index()
         {
+            ViewData["UserFullname"] = "";
+            ViewData["SessionActiveState"] = false;
+
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("UserFullname")))
+            {
+                ViewData["UserFullname"] = HttpContext.Session.GetString("UserFullname");
+                ViewData["SessionActiveState"] = true;
+            }
             return View();
         }
 

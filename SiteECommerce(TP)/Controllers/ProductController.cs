@@ -13,6 +13,8 @@ namespace SiteECommerce_TP_.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        [Route("/Products")]
         public async Task<IActionResult> Products()
         {
             var getAllProducts = _context.Products;
