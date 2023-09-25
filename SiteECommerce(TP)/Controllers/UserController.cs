@@ -83,6 +83,16 @@ namespace SiteECommerce_TP_.Controllers
 
         public IActionResult Login(LoginViewModel model)
         {
+            if(ModelState.IsValid)
+            {
+                var confirmedUser = _context.Users.FirstOrDefault(user => user.Mail == model.Email);
+
+                if ( confirmedUser != null && BC.Verify(model.Password, confirmedUser.Password))
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
             return View("Login");
         }
 

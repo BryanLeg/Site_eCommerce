@@ -6,6 +6,7 @@
 }
 
 <h1>Login</h1>
+<h4>Sign in to your account</h4>
 <form asp-controller="User" asp-action="Login" method="post">
     <div class="input-contner">
         <label asp-for="Email"></label>
@@ -15,9 +16,11 @@
         <label asp-for="Password"></label>
         <input class="form-input" asp-for="Password" placeholder="type your password" />
         <span asp-validation-for="Password" class="text-danger"></span>
+
+        <div asp-validation-summary="ModelOnly"></div>
     </div>
 
     <div class="btn-contner">
-        <input class="register-btn" type="submit" value="Register" />
+        <input class="login-btn" type="submit" value="Login" />
     </div>
 </form>
