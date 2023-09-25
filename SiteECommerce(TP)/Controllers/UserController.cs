@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using SiteECommerce_TP_.Context;
+using SiteECommerce_TP_.Models;
 using SiteECommerce_TP_.Models.ViewModels;
+using BC = BCrypt.Net.BCrypt;
 
 namespace SiteECommerce_TP_.Controllers
 {
@@ -11,11 +14,6 @@ namespace SiteECommerce_TP_.Controllers
         public UserController(ApplicationDbContext context)
         {
             _context = context;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
 
         #region REGISTER
@@ -33,6 +31,38 @@ namespace SiteECommerce_TP_.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(model.Password != model.ConfirmPassword)
+                {
+                    ModelState.AddModelError("", "Passwords don't match");
+                    return View();
+                }
+
+                var existingEmail = _context.Users.FirstOrDefault(
+                    user => user.Mail == model.Email
+                );
+
+                if(existingEmail != null)
+                {
+                    ModelState.AddModelError("", "This email already exists.");
+                    return View();
+                }
+
+
+                var newUser = new User
+                {
+                    Firstname = model.Firstname,
+                    Lastname = model.Lastname,
+                    Password = BC.HashPassword(model.Password),
+                    Mail = model.Email,
+                    PhoneNumber = model.PhoneNumber,
+                    Address = model.Adress,
+                    City = model.City,
+                    Country = model.Country,
+                    PostalCode = model.PostalCode
+                };
+
+                _context.Users.Add(newUser);
+                await _context.SaveChangesAsync();
 
                 return RedirectToAction("Index", "Home");
             }
@@ -40,6 +70,21 @@ namespace SiteECommerce_TP_.Controllers
             return View();
         }
 
+
+        #endregion
+
+        #region LOGIN
+        [HttpGet]
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Login(LoginViewModel model)
+        {
+            return View("Login");
+        }
 
         #endregion
     }

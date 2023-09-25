@@ -1,0 +1,23 @@
+﻿@using SiteECommerce_TP_.Models.ViewModels;
+
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+<form asp-controller="User" asp-action="Login" method="post">
+    <div class="input-contner">
+        <label asp-for="Email"></label>
+        <input class="form-input" asp-for="Email" placeholder="type your mail adress" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+        <label asp-for="Password"></label>
+        <input class="form-input" asp-for="Password" placeholder="type your password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="btn-contner">
+        <input class="register-btn" type="submit" value="Register" />
+    </div>
+</form>

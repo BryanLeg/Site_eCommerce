@@ -532,3 +532,4 @@ C:\Users\zod59\source\repos\SiteECommerce(TP)\SiteECommerce(TP)\bin\Debug\net6.0
 C:\Users\zod59\source\repos\SiteECommerce(TP)\SiteECommerce(TP)\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\zod59\source\repos\SiteECommerce(TP)\SiteECommerce(TP)\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\zod59\source\repos\SiteECommerce(TP)\SiteECommerce(TP)\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\GK\Desktop\projects\Site_eCommerce\SiteECommerce(TP)\bin\Debug\net6.0\BCrypt.Net-Next.dll

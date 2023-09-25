@@ -22,28 +22,45 @@
         <input class="form-input" asp-for="Password" placeholder="type your password" />
         <span asp-validation-for="Password" class="text-danger"></span>
 
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
         <label asp-for="ConfirmPassword"></label>
         <input class="form-input" asp-for="ConfirmPassword" placeholder="type the same password as above" />
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 
+        <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
 
         <label asp-for="Email"></label>
         <input class="form-input" asp-for="Email" placeholder="ex: johnsmith@email.com" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
 
         <label asp-for="PhoneNumber"></label>
         <input class="form-input" asp-for="PhoneNumber" placeholder="ex: +33 6 ** ** ** **" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
 
         <label asp-for="Adress"></label>
         <input class="form-input" asp-for="Adress" placeholder="ex: 47 avenue de l'Amandier" />
+        <span asp-validation-for="Adress" class="text-danger"></span>
+
 
         <label asp-for="City"></label>
         <input class="form-input" asp-for="City" placeholder="ex: Bondy" />
+        <span asp-validation-for="City" class="text-danger"></span>
+
 
         <label asp-for="Country"></label>
         <input class="form-input" asp-for="Country" placeholder="ex: France" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+
 
         <label asp-for="PostalCode"></label>
         <input class="form-input" asp-for="PostalCode" placeholder="ex: 93140" />
+        <span asp-validation-for="PostalCode" class="text-danger"></span>
+
+        
     </div>
     
     <div class="btn-contner">

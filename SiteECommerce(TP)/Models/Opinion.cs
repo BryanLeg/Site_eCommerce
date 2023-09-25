@@ -11,9 +11,19 @@ namespace SiteECommerce_TP_.Models
         [Column("op_content")]
         public string Content { get; set; }
 
-        [DefaultValue(false)]
+        private bool _isVisible = false;
         [Column("op_is_visible")]
-        public bool IsVisible { get; set; }
+        public bool IsVisible 
+        { 
+            get
+            {
+                return _isVisible;
+            }
+            set
+            {
+                _isVisible = value;
+            }
+        }
 
         [Column("op_rating")]
         public int Rating { get; set; }

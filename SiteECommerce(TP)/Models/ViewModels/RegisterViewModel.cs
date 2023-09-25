@@ -16,6 +16,7 @@ namespace SiteECommerce_TP_.Models.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         [MinLength(8, ErrorMessage = "The field Password must be a minimum length of 8 characters")]
+        [RegularExpression(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$", ErrorMessage = "Your password must contain at least one capital letter, a number and be at least 8 caracters long")]
         public string Password { get; set; }
 
         [Required]

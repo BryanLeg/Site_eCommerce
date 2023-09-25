@@ -8,6 +8,9 @@ namespace SiteECommerce_TP_.Models
         [Column("p_id")]
         public Guid Id { get; set; }
 
+        [Column("p_name")]
+        public string Name { get; set; }
+
         [Column("p_height")]
         public float Height { get; set; }
 
@@ -41,9 +44,19 @@ namespace SiteECommerce_TP_.Models
         [Column("p_order_count")]
         public int OrderCount { get; set; }
 
-        [DefaultValue(true)]
+        private bool _isActive = true;
         [Column("p_is_active")]
-        public bool IsActive { get; set; }
+        public bool IsActive
+        {
+            get 
+            { 
+                return _isActive; 
+            }
+            set 
+            { 
+                _isActive = value; 
+            }
+        }
 
         /*                          RELATIONS                           */
 

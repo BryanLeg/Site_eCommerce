@@ -148,6 +148,11 @@ namespace SiteECommerce_TP_.Migrations
                         .HasColumnType("real")
                         .HasColumnName("p_lenght");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("p_name");
+
                     b.Property<int>("OrderCount")
                         .HasColumnType("int")
                         .HasColumnName("p_order_count");
@@ -220,8 +225,9 @@ namespace SiteECommerce_TP_.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("u_password");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int")
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("u_phone_number");
 
                     b.Property<string>("PostalCode")

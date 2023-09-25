@@ -18,7 +18,7 @@ namespace SiteECommerce_TP_.Models
         public string Password { get; set; }
 
         [Column("u_phone_number")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Column("u_firstname")]
         public string Firstname { get; set; }
@@ -38,13 +38,32 @@ namespace SiteECommerce_TP_.Models
         [Column("u_country")]
         public string Country { get; set; }
 
-        [DefaultValue("client")]
+        private string _role = "Client";
         [Column("u_role")]
-        public string Role { get; set; }
+        public string Role 
+        { 
+            get
+            {
+                return _role;
+            }
+            set
+            {
+                _role = value;
+            }
+        }
 
-        [DefaultValue(true)]
+        private bool _isActive = true;
         [Column("u_is_active")]
-        public bool IsActive { get; set; }
+        public bool IsActive { 
+            get 
+            {
+                return _isActive;
+            } 
+            set 
+            {
+                _isActive = value;
+            }
+        }
 
         /*                          RELATIONS                           */
 
