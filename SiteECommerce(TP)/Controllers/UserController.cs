@@ -80,6 +80,20 @@ namespace SiteECommerce_TP_.Controllers
         [Route("/Login")]
         public IActionResult Login()
         {
+            ViewData["SessionActiveState"] = false;
+
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("SessionActiveState")))
+            {
+                ViewData["UserFullname"] = HttpContext.Session.GetString("UserFullname");
+                ViewData["SessionActiveState"] = true;
+            }
+
+            string? session = HttpContext.Session.GetString("SessionActiveState");
+            if (session == "true")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return View();
         }
 
@@ -97,8 +111,9 @@ namespace SiteECommerce_TP_.Controllers
                     {
                         HttpContext.Session.SetString("UserId", confirmedUser.Id.ToString());
                         HttpContext.Session.SetString("UserFullname", confirmedUser.Firstname + confirmedUser.Lastname);
+                        HttpContext.Session.SetString("Role", confirmedUser.Role);
+                        HttpContext.Session.SetString("SessionActiveState", "true");
                     }
-                    Console.WriteLine(HttpContext.Session.GetString("UserFullname"));
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Incorrect email or password");
@@ -106,6 +121,17 @@ namespace SiteECommerce_TP_.Controllers
             }
 
             return View();
+        }
+
+        #endregion
+
+        #region LOG OUT
+        [HttpGet]
+        [Route("/Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
         }
 
         #endregion
