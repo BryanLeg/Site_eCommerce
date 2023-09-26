@@ -20,6 +20,7 @@ namespace SiteECommerce_TP_.Controllers
 
         // GET: /Register
         [HttpGet]
+        [Route("/Register")]
         public IActionResult Register()
         {
             return View();
@@ -27,6 +28,7 @@ namespace SiteECommerce_TP_.Controllers
 
         //POST: /Register
         [HttpPost]
+        [Route("/Register")]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -64,7 +66,7 @@ namespace SiteECommerce_TP_.Controllers
                 _context.Users.Add(newUser);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login");
             }
 
             return View();
@@ -75,12 +77,14 @@ namespace SiteECommerce_TP_.Controllers
 
         #region LOGIN
         [HttpGet]
-
+        [Route("/Login")]
         public IActionResult Login()
         {
             return View();
         }
 
+        [HttpPost]
+        [Route("/Login")]
         public IActionResult Login(LoginViewModel model)
         {
             if(ModelState.IsValid)
@@ -89,11 +93,19 @@ namespace SiteECommerce_TP_.Controllers
 
                 if ( confirmedUser != null && BC.Verify(model.Password, confirmedUser.Password))
                 {
+                    if(string.IsNullOrEmpty(HttpContext.Session.GetString("UserFullname")))
+                    {
+                        HttpContext.Session.SetString("UserId", confirmedUser.Id.ToString());
+                        HttpContext.Session.SetString("UserFullname", confirmedUser.Firstname + confirmedUser.Lastname);
+                    }
+                    Console.WriteLine(HttpContext.Session.GetString("UserFullname"));
                     return RedirectToAction("Index", "Home");
                 }
+                ModelState.AddModelError("", "Incorrect email or password");
+                return View();
             }
 
-            return View("Login");
+            return View();
         }
 
         #endregion

@@ -29,13 +29,33 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ml-auto"
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark " asp-area="" asp-controller="User" asp-action="Login">Log in</a>
-                        </li>
+                    <ul class="navbar-nav ml-auto">
+                        @{
+                            if (ViewData["SessionActiveState"] != null && typeof(bool) == ViewData["SessionActiveState"].GetType())
+                            {
+                                bool isSessionActive = (bool)ViewData["SessionActiveState"];
+
+                                if (isSessionActive)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark " asp-area="" asp-controller="User" asp-action="Logout">Log out</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Register</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark " asp-area="" asp-controller="User" asp-action="Login">Log in</a>
+                                    </li>
+                                }
+
+
+                            }
+
+                        }
+
                     </ul>
                 </div>
             </div>
