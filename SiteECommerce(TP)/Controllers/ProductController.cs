@@ -41,6 +41,10 @@ namespace SiteECommerce_TP_.Controllers
         [Route("/New-product")]
         public async Task<IActionResult> AddProduct(AddProductViewModel model)
         {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Products");
+            }
             return View();
         }
     }

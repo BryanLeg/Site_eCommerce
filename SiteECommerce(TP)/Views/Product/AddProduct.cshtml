@@ -8,5 +8,53 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-controller="Product" asp-action="AddProduct">
+    <div class="input-contner">
+        <label asp-for="ProductName"></label>
+        <input class="form-input" asp-for="ProductName"  />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
 
+        <label asp-for="Height"></label>
+        <input class="form-input" asp-for="Height"  />
+        <span asp-validation-for="Height" class="text-danger"></span>
+
+        <label asp-for="Width"></label>
+        <input class="form-input" asp-for="Width"  />
+        <span asp-validation-for="Width" class="text-danger"></span>
+
+        <label asp-for="Length"></label>
+        <input class="form-input" asp-for="Length"  />
+        <span asp-validation-for="Length" class="text-danger"></span>
+
+        <label asp-for="Weight"></label>
+        <input class="form-input" asp-for="Weight"  />
+        <span asp-validation-for="Weight" class="text-danger"></span>
+
+        <label asp-for="Capacity"></label>
+        <input class="form-input" asp-for="Capacity"  />
+        <span asp-validation-for="Capacity" class="text-danger"></span>
+
+        <label asp-for="Description"></label>
+        <input class="form-input" asp-for="Description"  />
+        <span asp-validation-for="Description" class="text-danger"></span>
+
+        <label asp-for="PrimaryColor"></label>
+        <input class="form-input" asp-for="PrimaryColor"  />
+        <span asp-validation-for="PrimaryColor" class="text-danger"></span>
+
+        <label asp-for="Constructor"></label>
+        <input class="form-input" asp-for="Constructor"  />
+        <span asp-validation-for="Constructor" class="text-danger"></span>
+
+        <label asp-for="Price"></label>
+        <input class="form-input" asp-for="Price"  />
+        <span asp-validation-for="Price" class="text-danger"></span>
+
+        <label asp-for="Picture"></label>
+        <input class="form-input" asp-for="Picture"  />
+        <span asp-validation-for="Picture" class="text-danger"></span>
+    </div>
+
+    <div class="btn-contner">
+        <input class="register-btn" type="submit" value="Add Product" />
+    </div>
 </form>

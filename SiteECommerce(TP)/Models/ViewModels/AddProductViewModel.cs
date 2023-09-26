@@ -10,23 +10,23 @@ namespace SiteECommerce_TP_.Models.ViewModels
 
         [Required]
         [Display(Name = "Height")]
-        public string Height { get; set; }
+        public float Height { get; set; }
 
         [Required]
         [Display(Name = "Width")]
-        public string Width { get; set; }
+        public float Width { get; set; }
 
         [Required]
         [Display(Name = "Length")]
-        public string Length { get; set; }
+        public float Length { get; set; }
         
         [Required]
         [Display(Name = "Weight")]
-        public string Weight { get; set; }
+        public float Weight { get; set; }
 
         [Required]
         [Display(Name = "Capacity")]
-        public string Capacity { get; set; }
+        public int Capacity { get; set; }
 
         [Required]
         [Display(Name = "Description")]
@@ -42,7 +42,7 @@ namespace SiteECommerce_TP_.Models.ViewModels
 
         [Required]
         [Display(Name = "Price")]
-        public string Price { get; set; }
+        public float Price { get; set; }
 
         [Required]
         [Display(Name = "Picture")]
