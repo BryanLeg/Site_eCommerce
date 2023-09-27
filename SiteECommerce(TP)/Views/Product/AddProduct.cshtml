@@ -7,7 +7,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form asp-controller="Product" asp-action="AddProduct">
+<form asp-controller="Product" asp-action="AddProduct" enctype="multipart/form-data">
     <div class="input-contner">
         <label asp-for="ProductName"></label>
         <input class="form-input" asp-for="ProductName"  />
@@ -50,8 +50,10 @@
         <span asp-validation-for="Price" class="text-danger"></span>
 
         <label asp-for="Picture"></label>
-        <input class="form-input" asp-for="Picture"  />
+        <input class="form-input" id="img" asp-for="Picture"  type="file" accept="image/png, image/jpeg"/>
         <span asp-validation-for="Picture" class="text-danger"></span>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     </div>
 
     <div class="btn-contner">

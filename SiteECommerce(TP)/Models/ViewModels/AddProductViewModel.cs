@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace SiteECommerce_TP_.Models.ViewModels
 {
@@ -9,19 +10,19 @@ namespace SiteECommerce_TP_.Models.ViewModels
         public string ProductName { get; set; }
 
         [Required]
-        [Display(Name = "Height")]
+        [Display(Name = "Height(cm)")]
         public float Height { get; set; }
 
         [Required]
-        [Display(Name = "Width")]
+        [Display(Name = "Width(cm)")]
         public float Width { get; set; }
 
         [Required]
-        [Display(Name = "Length")]
+        [Display(Name = "Length(cm)")]
         public float Length { get; set; }
         
         [Required]
-        [Display(Name = "Weight")]
+        [Display(Name = "Weight(kg)")]
         public float Weight { get; set; }
 
         [Required]

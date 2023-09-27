@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SiteECommerce_TP_.Context;
 using SiteECommerce_TP_.Models;
 using SiteECommerce_TP_.Models.ViewModels;
@@ -50,7 +51,7 @@ namespace SiteECommerce_TP_.Controllers
                 }
 
 
-                var newUser = new User
+                User newUser = new ()
                 {
                     Firstname = model.Firstname,
                     Lastname = model.Lastname,
@@ -134,6 +135,54 @@ namespace SiteECommerce_TP_.Controllers
             return RedirectToAction("Login");
         }
 
+        #endregion
+
+        #region GET USERS
+        [HttpGet]
+        [Route("/Users")]
+        public async Task<IActionResult> Users()
+        {
+            ViewData["SessionActiveState"] = false;
+
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("SessionActiveState")))
+            {
+                ViewData["UserFullname"] = HttpContext.Session.GetString("UserFullname");
+                ViewData["SessionActiveState"] = true;
+
+            }
+
+            if (HttpContext.Session.GetString("Role") == "Admin")
+            {
+                var getAllUsers = _context.Users;
+                return View(await getAllUsers.ToListAsync());
+
+            }
+
+                return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        [Route("/User/Details/{id?}")]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            ViewData["SessionActiveState"] = false;
+
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("SessionActiveState")))
+            {
+                ViewData["UserFullname"] = HttpContext.Session.GetString("UserFullname");
+                ViewData["SessionActiveState"] = true;
+
+            }
+
+            if(HttpContext.Session.GetString("Role") == "Admin")
+            {
+                User? user = await _context.Users.FirstOrDefaultAsync(user => user.Id == id);
+
+                return View(user);
+
+            }
+            return RedirectToAction("Index", "Home");
+        }
         #endregion
     }
 }

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SiteECommerce_TP_.Models.User>
+@{
+    ViewData["Title"] = "All Users";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<ul class="list-group list-group-item-light">
+    @foreach (User user in Model)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a class="text-dark p-0" href="https://localhost:7119/User/Details/@user.Id" style="text-decoration:none">
+                <div class="fw-bold">@user.Firstname @user.Lastname</div>
+                <div class="text-muted">@user.Mail</div>
+            <span class="badge text-black @user.Role text-uppercase">@user.Role</span>
+            </a>
+            @{
+                if (user.IsActive == true)
+                {
+                    <span class="badge rounded-pill bg-success">Active</span>
+                } else
+                {
+                    
+                <span class="badge rounded-pill bg-danger">Not Active</span>
+                }
+            }
+        </li>
+    }
+</ul>

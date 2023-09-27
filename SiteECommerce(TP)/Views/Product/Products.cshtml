@@ -5,52 +5,27 @@
 
 <h1>Products</h1>
 
+<main class="row row-cols-2 g-3">
 @foreach (Product product in Model)
 {
-    <a href="https://localhost:7119/products/details/@product.Id">
-        <article>
-            <h2>@product.Name</h2>
-            <img src="https://localhost:7119/images/@product.Picture"/>
-            <label>Description: </label>
-            <p>
-                @product.Description
-            </p>
-            <label>Height: </label>
-            <p>
-                @product.Height
-            </p>
-            <label>Width: </label>
-            <p>
-                @product.Width
-            </p>
-            <label>Length: </label>
-            <p>
-                @product.Length
-            </p>
-            <label>Weight: </label>
-            <p>
-                @product.Weigth
-            </p>
-            <label>Capacity: </label>
-            <p>
-                @product.Capacity
-            </p>
-            <label>Price: </label>
-            <p>
-                @product.Price $
-            </p>
-            <label>Constructor: </label>
-            <p>
-                @product.Constructor
-            </p>
-            <label>Color: </label>
-            <p>
-                @product.Color
-            </p>
-            <label>Opinions: </label>
-            <p>
-                @product.Opinions
-            </p>
-        </article>
-    </a>
-}
+        <div class="col">
+            <a class="card bg-dark text-dark p-0" href="https://localhost:7119/Product/Details/@product.Id" style="text-decoration:none">
+                <article class="card-body p-0">
+                    <img class="card-img-top" src="https://localhost:7119/images/@product.Picture" />
+                    <div class="card-img-overlay">
+                        <h2 class="card-title">@product.Name</h2>
+                        <label class="card-text">Description: </label>
+                        <p class="card-text">
+                            @product.Description
+                        </p>
+                        <label class="card-text">Price: </label>
+                        <p class="card-text">
+                            @product.Price $
+                        </p>
+                    </div>
+                </article>
+            </a>
+        </div>
+        
+    }
+</main>

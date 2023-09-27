@@ -1,0 +1,52 @@
+﻿@model SiteECommerce_TP_.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<article>
+    <h2>@Html.DisplayFor(product => product.Name)</h2>
+    <img src="https://localhost:7119/images/@Html.DisplayFor(product => product.Picture)" />
+    <label>Description: </label>
+    <p>
+        @Html.DisplayFor(product => product.Description)
+    </p>
+    <label>Height: </label>
+    <p>
+        @Html.DisplayFor(product => product.Height)
+    </p>
+    <label>Width: </label>
+    <p>
+        @Html.DisplayFor(product => product.Width)
+    </p>
+    <label>Length: </label>
+    <p>
+        @Html.DisplayFor(product => product.Length)
+    </p>
+    <label>Weight: </label>
+    <p>
+        @Html.DisplayFor(product => product.Weight)
+    </p>
+    <label>Capacity: </label>
+    <p>
+        @Html.DisplayFor(product => product.Capacity)
+    </p>
+    <label>Price: </label>
+    <p>
+        @Html.DisplayFor(product => product.Price) $
+    </p>
+    <label>Constructor: </label>
+    <p>
+        @Html.DisplayFor(product => product.Constructor)
+    </p>
+    <label>Color: </label>
+    <p>
+        @Html.DisplayFor(product => product.Color)
+    </p>
+    <label>Opinions: </label>
+    <p>
+        @Html.DisplayFor(product => product.Opinions)
+    </p>
+</article>

@@ -17,6 +17,9 @@ body {
   margin-bottom: 60px;
 }
 
+img {
+    width: 20vw;
+}
 
 .form-input {
     margin: 10px;
@@ -37,4 +40,16 @@ body {
 .register-btn, .login-btn {
     padding: 10px 100px;
     margin: 30px 0px;
+}
+
+.Client {
+    background-color: deepskyblue;
+}
+
+.Admin {
+    background-color: crimson;
+}
+
+.Moderator {
+    background-color: aquamarine;
 }

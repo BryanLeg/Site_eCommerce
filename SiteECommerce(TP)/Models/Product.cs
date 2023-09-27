@@ -21,7 +21,7 @@ namespace SiteECommerce_TP_.Models
         public float Width { get; set; }
 
         [Column("p_weight")]
-        public float Weigth { get; set; }
+        public float Weight { get; set; }
 
         [Column("p_capacity")]
         public int Capacity { get; set; }

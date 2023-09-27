@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\wwwroot\\images\\b0262b0b-35d8-40a8-93a3-3290ebd2b497.jpg",
+      "PackagePath": "staticwebassets\\images\\b0262b0b-35d8-40a8-93a3-3290ebd2b497.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\wwwroot\\images\\efcbbedd-1f9f-4d9a-9a9e-4922a98b9118.jpg",
+      "PackagePath": "staticwebassets\\images\\efcbbedd-1f9f-4d9a-9a9e-4922a98b9118.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\wwwroot\\images\\f2e721cf-ca8f-49fa-99c2-2a932cf4482e.jpg",
+      "PackagePath": "staticwebassets\\images\\f2e721cf-ca8f-49fa-99c2-2a932cf4482e.jpg"
+    },
+    {
       "Id": "C:\\Users\\GK\\Desktop\\projects\\Site_eCommerce\\SiteECommerce(TP)\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
