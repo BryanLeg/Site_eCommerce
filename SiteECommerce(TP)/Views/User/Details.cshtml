@@ -2,21 +2,37 @@
 
 
 <h1>@Html.DisplayFor(user => user.Firstname) @Html.DisplayFor(user => user.Lastname) Details</h1>
+<span class="badge text-black rounded-pill mb-3 @Html.DisplayFor(user => user.Role) text-uppercase">@Html.DisplayFor(user => user.Role)</span>
+@{
+    if (Model.IsActive == true)
+    {
+        <span class="badge rounded-pill bg-success">Active</span>
+    }
+    else
+    {
 
-<main class="row row-cols-2 g-3">
+        <span class="badge rounded-pill bg-danger">Not Active</span>
+    }
+}
 
-<ul class="list-group">
-    <li class="list-group-item">Id:  @Html.DisplayFor(user => user.Id)</li>
-    <li class="list-group-item">Firstname: @Html.DisplayFor(user => user.Firstname)</li>
-    <li class="list-group-item">Lastname: @Html.DisplayFor(user => user.Lastname)</li>
-    <li class="list-group-item">Mail: @Html.DisplayFor(user => user.Mail)</li>
-    <li class="list-group-item">Phone number: @Html.DisplayFor(user => user.PhoneNumber)</li>
-    <li class="list-group-item">Adress: @Html.DisplayFor(user => user.Address)</li>
-    <li class="list-group-item">City: @Html.DisplayFor(user => user.City)</li>
-    <li class="list-group-item">Country: @Html.DisplayFor(user => user.Country)</li>
-    <li class="list-group-item">Postal Code: @Html.DisplayFor(user => user.PostalCode)</li>
-    <li class="list-group-item">@Html.DisplayFor(user => user.IsActive)</li>
-    <li class="list-group-item">@Html.DisplayFor(user => user.Orders)</li>
-</ul>
-    <span class="badge text-black @Html.DisplayFor(user => user.Role) text-uppercase">@Html.DisplayFor(user => user.Role)</span>
+<main class="row row-cols-2">
+
+    <ul class="list-group">
+        <li class="list-group-item">Id:  @Html.DisplayFor(user => user.Id)</li>
+        <li class="list-group-item">Firstname: @Html.DisplayFor(user => user.Firstname)</li>
+        <li class="list-group-item">Lastname: @Html.DisplayFor(user => user.Lastname)</li>
+        <li class="list-group-item">Mail: @Html.DisplayFor(user => user.Mail)</li>
+        <li class="list-group-item">Phone number: @Html.DisplayFor(user => user.PhoneNumber)</li>
+        <li class="list-group-item">Adress: @Html.DisplayFor(user => user.Address)</li>
+        <li class="list-group-item">City: @Html.DisplayFor(user => user.City)</li>
+        <li class="list-group-item">Country: @Html.DisplayFor(user => user.Country)</li>
+        <li class="list-group-item">Postal Code: @Html.DisplayFor(user => user.PostalCode)</li>
+        <li class="list-group-item">Orders: @Html.DisplayFor(user => user.Orders)</li>
+    </ul>
+
 </main>
+<div class="btn-contner m-1">
+    <a class="goback-btn btn btn-dark" role="button" asp-area="" asp-controller="User" asp-action="Users">Go Back To List</a>
+    <a class="goback-btn btn btn-dark" role="button" asp-area="" asp-action="EditUser" asp-route-id="@Model.Id" >Edit</a>
+</div>
+

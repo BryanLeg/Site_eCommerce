@@ -19,7 +19,6 @@ namespace SiteECommerce_TP_.Controllers
 
         #region REGISTER
 
-        // GET: /Register
         [HttpGet]
         [Route("/Register")]
         public IActionResult Register()
@@ -27,11 +26,11 @@ namespace SiteECommerce_TP_.Controllers
             return View();
         }
 
-        //POST: /Register
         [HttpPost]
         [Route("/Register")]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
+
             if (ModelState.IsValid)
             {
                 if(model.Password != model.ConfirmPassword)
@@ -182,6 +181,69 @@ namespace SiteECommerce_TP_.Controllers
 
             }
             return RedirectToAction("Index", "Home");
+        }
+
+        #endregion
+
+        #region EDIT USER
+        [HttpGet]
+        [Route("/User/Edit/{id?}")]
+        public async Task<IActionResult> EditUser(Guid id)
+        {
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("SessionActiveState")))
+            {
+                ViewData["UserFullname"] = HttpContext.Session.GetString("UserFullname");
+                ViewData["SessionActiveState"] = true;
+
+            }
+
+            if (HttpContext.Session.GetString("Role") == "Admin")
+            {
+                User? user = await _context.Users.FirstOrDefaultAsync(user => user.Id == id);
+
+                ViewData["User"] = user;
+
+                var model = new EditUserViewModel();
+                model.Role = user.Role;
+
+                return View(model);
+
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        [HttpPost]
+        [Route("/User/Edit/{id?}")]
+        public async Task<IActionResult> EditUser(Guid id, [Bind("Firstname, Lastname, Mail, PhoneNumber, Address, City, Country, PostalCode, Role")] EditUserViewModel model)
+        {
+                Guid InEditUserID = (Guid)TempData["InEditUserID"];
+            if(ModelState.IsValid)
+            {
+                //User editedUser = new()
+                //{
+                //    Firstname = model.Firstname,
+                //    Lastname = model.Lastname,
+                //    Mail = model.Email,
+                //    PhoneNumber = model.PhoneNumber,
+                //    Address = model.Adress,
+                //    City = model.City,
+                //    Country = model.Country,
+                //    PostalCode = model.PostalCode,
+                //    Role = model.Role
+                //};
+
+
+                //User? existingUser = _context.Users.FirstOrDefault(user => user.Id == InEditUserID);
+
+                _context.Update(model);
+                await _context.SaveChangesAsync();
+
+                Console.WriteLine("form edited");
+
+                return RedirectToAction("Details" , new{ id = InEditUserID});
+            }
+            return RedirectToAction("EditUser", new { id = InEditUserID });
         }
         #endregion
     }

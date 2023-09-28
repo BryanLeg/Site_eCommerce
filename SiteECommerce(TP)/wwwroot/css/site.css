@@ -33,11 +33,19 @@ img {
 
 .btn-contner {
     display: flex;
-    justify-content: flex-start;
-    width: 100vw;
+    justify-content: space-evenly;
+    width: 40vw;
 }
 
-.register-btn, .login-btn {
+.btn {
+    padding: 10px 35px;
+}
+
+.list-group {
+    width: 75%
+}
+
+.register-btn, .login-btn, .edit-btn {
     padding: 10px 100px;
     margin: 30px 0px;
 }

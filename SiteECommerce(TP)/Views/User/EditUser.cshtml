@@ -1,0 +1,52 @@
+﻿@using SiteECommerce_TP_.Models.ViewModels
+
+@model EditUserViewModel
+
+@{
+    User user = (User)ViewData["User"];
+    ViewData["Title"] = $"Editting {user.Firstname} {user.Lastname}";
+    TempData["InEditUserID"] = user.Id;
+}
+
+<h1 class="text-danger" >@ViewData["Title"]</h1>
+
+<form asp-controller="User" asp-action="EditUser" method="post">
+
+    <div class="input-contner">
+        <label asp-for="Firstname"></label>
+        <input class="form-input" value="@user.Firstname" asp-for="Firstname" />
+        <span asp-validation-for="Firstname" class="text-danger"></span>
+
+        <label asp-for="Lastname"></label>
+        <input class="form-input" value="@user.Lastname" asp-for="Lastname" />
+        <span asp-validation-for="Lastname" class="text-danger"></span>
+
+        <label asp-for="PhoneNumber"></label>
+        <input class="form-input" value="@user.PhoneNumber" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+        <label asp-for="Adress"></label>
+        <input class="form-input" value="@user.Address" asp-for="Adress" />
+        <span asp-validation-for="Adress" class="text-danger"></span>
+
+        <label asp-for="City"></label>
+        <input class="form-input" value="@user.City" asp-for="City" />
+        <span asp-validation-for="City" class="text-danger"></span>
+
+        <label asp-for="Country"></label>
+        <input class="form-input" value="@user.Country" asp-for="Country" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+
+        <label asp-for="PostalCode"></label>
+        <input class="form-input" value="@user.PostalCode" asp-for="PostalCode" />
+        <span asp-validation-for="PostalCode" class="text-danger"></span>
+
+        <label asp-for="Role"></label>
+        <select class="form-input form-select" asp-for="Role" asp-items="Model.Roles"></select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <div class="btn-contner">
+        <input class="edit-btn" type="submit" value="Edit" />
+    </div>
+</form>
